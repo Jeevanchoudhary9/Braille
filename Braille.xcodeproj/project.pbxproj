@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		96647C9E2B7E6A0D002BE02A /* BrailleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96647C9D2B7E6A0D002BE02A /* BrailleApp.swift */; };
+		96647CA02B7E6A0D002BE02A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96647C9F2B7E6A0D002BE02A /* ContentView.swift */; };
+		96647CA22B7E6A11002BE02A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96647CA12B7E6A11002BE02A /* Assets.xcassets */; };
+		96647CA52B7E6A11002BE02A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96647CA42B7E6A11002BE02A /* Preview Assets.xcassets */; };
+		96647CAF2B7E6A11002BE02A /* BrailleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96647CAE2B7E6A11002BE02A /* BrailleTests.swift */; };
+		96647CB92B7E6A11002BE02A /* BrailleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96647CB82B7E6A11002BE02A /* BrailleUITests.swift */; };
+		96647CBB2B7E6A11002BE02A /* BrailleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96647CBA2B7E6A11002BE02A /* BrailleUITestsLaunchTests.swift */; };
+		96647CC82B7E6BD4002BE02A /* BrailleDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96647CC72B7E6BD4002BE02A /* BrailleDot.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96647CAB2B7E6A11002BE02A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96647C922B7E6A0D002BE02A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96647C992B7E6A0D002BE02A;
+			remoteInfo = Braille;
+		};
+		96647CB52B7E6A11002BE02A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96647C922B7E6A0D002BE02A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96647C992B7E6A0D002BE02A;
+			remoteInfo = Braille;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		96647C9A2B7E6A0D002BE02A /* Braille.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Braille.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96647C9D2B7E6A0D002BE02A /* BrailleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleApp.swift; sourceTree = "<group>"; };
+		96647C9F2B7E6A0D002BE02A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		96647CA12B7E6A11002BE02A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96647CA42B7E6A11002BE02A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96647CAA2B7E6A11002BE02A /* BrailleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrailleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96647CAE2B7E6A11002BE02A /* BrailleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleTests.swift; sourceTree = "<group>"; };
+		96647CB42B7E6A11002BE02A /* BrailleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrailleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96647CB82B7E6A11002BE02A /* BrailleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleUITests.swift; sourceTree = "<group>"; };
+		96647CBA2B7E6A11002BE02A /* BrailleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		96647CC72B7E6BD4002BE02A /* BrailleDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleDot.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96647C972B7E6A0D002BE02A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96647CA72B7E6A11002BE02A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96647CB12B7E6A11002BE02A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96647C912B7E6A0D002BE02A = {
+			isa = PBXGroup;
+			children = (
+				96647C9C2B7E6A0D002BE02A /* Braille */,
+				96647CAD2B7E6A11002BE02A /* BrailleTests */,
+				96647CB72B7E6A11002BE02A /* BrailleUITests */,
+				96647C9B2B7E6A0D002BE02A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96647C9B2B7E6A0D002BE02A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96647C9A2B7E6A0D002BE02A /* Braille.app */,
+				96647CAA2B7E6A11002BE02A /* BrailleTests.xctest */,
+				96647CB42B7E6A11002BE02A /* BrailleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96647C9C2B7E6A0D002BE02A /* Braille */ = {
+			isa = PBXGroup;
+			children = (
+				96647C9D2B7E6A0D002BE02A /* BrailleApp.swift */,
+				96647C9F2B7E6A0D002BE02A /* ContentView.swift */,
+				96647CA12B7E6A11002BE02A /* Assets.xcassets */,
+				96647CA32B7E6A11002BE02A /* Preview Content */,
+				96647CC72B7E6BD4002BE02A /* BrailleDot.swift */,
+			);
+			path = Braille;
+			sourceTree = "<group>";
+		};
+		96647CA32B7E6A11002BE02A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				96647CA42B7E6A11002BE02A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		96647CAD2B7E6A11002BE02A /* BrailleTests */ = {
+			isa = PBXGroup;
+			children = (
+				96647CAE2B7E6A11002BE02A /* BrailleTests.swift */,
+			);
+			path = BrailleTests;
+			sourceTree = "<group>";
+		};
+		96647CB72B7E6A11002BE02A /* BrailleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				96647CB82B7E6A11002BE02A /* BrailleUITests.swift */,
+				96647CBA2B7E6A11002BE02A /* BrailleUITestsLaunchTests.swift */,
+			);
+			path = BrailleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96647C992B7E6A0D002BE02A /* Braille */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96647CBE2B7E6A11002BE02A /* Build configuration list for PBXNativeTarget "Braille" */;
+			buildPhases = (
+				96647C962B7E6A0D002BE02A /* Sources */,
+				96647C972B7E6A0D002BE02A /* Frameworks */,
+				96647C982B7E6A0D002BE02A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Braille;
+			productName = Braille;
+			productReference = 96647C9A2B7E6A0D002BE02A /* Braille.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96647CA92B7E6A11002BE02A /* BrailleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96647CC12B7E6A11002BE02A /* Build configuration list for PBXNativeTarget "BrailleTests" */;
+			buildPhases = (
+				96647CA62B7E6A11002BE02A /* Sources */,
+				96647CA72B7E6A11002BE02A /* Frameworks */,
+				96647CA82B7E6A11002BE02A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96647CAC2B7E6A11002BE02A /* PBXTargetDependency */,
+			);
+			name = BrailleTests;
+			productName = BrailleTests;
+			productReference = 96647CAA2B7E6A11002BE02A /* BrailleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		96647CB32B7E6A11002BE02A /* BrailleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96647CC42B7E6A11002BE02A /* Build configuration list for PBXNativeTarget "BrailleUITests" */;
+			buildPhases = (
+				96647CB02B7E6A11002BE02A /* Sources */,
+				96647CB12B7E6A11002BE02A /* Frameworks */,
+				96647CB22B7E6A11002BE02A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96647CB62B7E6A11002BE02A /* PBXTargetDependency */,
+			);
+			name = BrailleUITests;
+			productName = BrailleUITests;
+			productReference = 96647CB42B7E6A11002BE02A /* BrailleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96647C922B7E6A0D002BE02A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					96647C992B7E6A0D002BE02A = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					96647CA92B7E6A11002BE02A = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 96647C992B7E6A0D002BE02A;
+					};
+					96647CB32B7E6A11002BE02A = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 96647C992B7E6A0D002BE02A;
+					};
+				};
+			};
+			buildConfigurationList = 96647C952B7E6A0D002BE02A /* Build configuration list for PBXProject "Braille" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96647C912B7E6A0D002BE02A;
+			productRefGroup = 96647C9B2B7E6A0D002BE02A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96647C992B7E6A0D002BE02A /* Braille */,
+				96647CA92B7E6A11002BE02A /* BrailleTests */,
+				96647CB32B7E6A11002BE02A /* BrailleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96647C982B7E6A0D002BE02A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96647CA52B7E6A11002BE02A /* Preview Assets.xcassets in Resources */,
+				96647CA22B7E6A11002BE02A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96647CA82B7E6A11002BE02A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96647CB22B7E6A11002BE02A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96647C962B7E6A0D002BE02A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96647CA02B7E6A0D002BE02A /* ContentView.swift in Sources */,
+				96647C9E2B7E6A0D002BE02A /* BrailleApp.swift in Sources */,
+				96647CC82B7E6BD4002BE02A /* BrailleDot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96647CA62B7E6A11002BE02A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96647CAF2B7E6A11002BE02A /* BrailleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96647CB02B7E6A11002BE02A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96647CBB2B7E6A11002BE02A /* BrailleUITestsLaunchTests.swift in Sources */,
+				96647CB92B7E6A11002BE02A /* BrailleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96647CAC2B7E6A11002BE02A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96647C992B7E6A0D002BE02A /* Braille */;
+			targetProxy = 96647CAB2B7E6A11002BE02A /* PBXContainerItemProxy */;
+		};
+		96647CB62B7E6A11002BE02A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96647C992B7E6A0D002BE02A /* Braille */;
+			targetProxy = 96647CB52B7E6A11002BE02A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		96647CBC2B7E6A11002BE02A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		96647CBD2B7E6A11002BE02A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96647CBF2B7E6A11002BE02A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Braille/Preview Content\"";
+				DEVELOPMENT_TEAM = G2U9RA6FDY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jeevan-Technology.Braille";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96647CC02B7E6A11002BE02A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Braille/Preview Content\"";
+				DEVELOPMENT_TEAM = G2U9RA6FDY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jeevan-Technology.Braille";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		96647CC22B7E6A11002BE02A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jeevan-Technology.BrailleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Braille.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Braille";
+			};
+			name = Debug;
+		};
+		96647CC32B7E6A11002BE02A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jeevan-Technology.BrailleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Braille.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Braille";
+			};
+			name = Release;
+		};
+		96647CC52B7E6A11002BE02A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jeevan-Technology.BrailleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Braille;
+			};
+			name = Debug;
+		};
+		96647CC62B7E6A11002BE02A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jeevan-Technology.BrailleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Braille;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96647C952B7E6A0D002BE02A /* Build configuration list for PBXProject "Braille" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96647CBC2B7E6A11002BE02A /* Debug */,
+				96647CBD2B7E6A11002BE02A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96647CBE2B7E6A11002BE02A /* Build configuration list for PBXNativeTarget "Braille" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96647CBF2B7E6A11002BE02A /* Debug */,
+				96647CC02B7E6A11002BE02A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96647CC12B7E6A11002BE02A /* Build configuration list for PBXNativeTarget "BrailleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96647CC22B7E6A11002BE02A /* Debug */,
+				96647CC32B7E6A11002BE02A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96647CC42B7E6A11002BE02A /* Build configuration list for PBXNativeTarget "BrailleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96647CC52B7E6A11002BE02A /* Debug */,
+				96647CC62B7E6A11002BE02A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96647C922B7E6A0D002BE02A /* Project object */;
+}
