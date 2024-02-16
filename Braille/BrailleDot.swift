@@ -18,8 +18,8 @@ struct BrailleDot: View {
                             let shouldFill = input.contains("\(dotNumber)")
                             
                             Circle()
-                                .fill(shouldFill ? colorScheme == .dark ? Color.white : Color.black : Color.clear)
-                                .stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: 2)
+                                .fill(shouldFill ?  Color.white : Color.clear)
+                                .stroke(Color.white, lineWidth: 2)
                                 .frame(width: CGFloat(bsize), height: CGFloat(bsize))
                         }
                     }
