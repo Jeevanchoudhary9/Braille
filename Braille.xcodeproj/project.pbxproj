@@ -15,6 +15,10 @@
 		96647CB92B7E6A11002BE02A /* BrailleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96647CB82B7E6A11002BE02A /* BrailleUITests.swift */; };
 		96647CBB2B7E6A11002BE02A /* BrailleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96647CBA2B7E6A11002BE02A /* BrailleUITestsLaunchTests.swift */; };
 		96647CC82B7E6BD4002BE02A /* BrailleDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96647CC72B7E6BD4002BE02A /* BrailleDot.swift */; };
+		966FF6D72B80C26100325C9C /* ButtonLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6D62B80C26100325C9C /* ButtonLeft.swift */; };
+		966FF6D92B80C38C00325C9C /* ButtonRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6D82B80C38C00325C9C /* ButtonRight.swift */; };
+		966FF6DD2B80E42600325C9C /* BrailleDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6DC2B80E42600325C9C /* BrailleDotView.swift */; };
+		966FF6DF2B80E4CF00325C9C /* BrailleCharView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6DE2B80E4CF00325C9C /* BrailleCharView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		96647CB82B7E6A11002BE02A /* BrailleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleUITests.swift; sourceTree = "<group>"; };
 		96647CBA2B7E6A11002BE02A /* BrailleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		96647CC72B7E6BD4002BE02A /* BrailleDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleDot.swift; sourceTree = "<group>"; };
+		966FF6D62B80C26100325C9C /* ButtonLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLeft.swift; sourceTree = "<group>"; };
+		966FF6D82B80C38C00325C9C /* ButtonRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRight.swift; sourceTree = "<group>"; };
+		966FF6DC2B80E42600325C9C /* BrailleDotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleDotView.swift; sourceTree = "<group>"; };
+		966FF6DE2B80E4CF00325C9C /* BrailleCharView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleCharView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,10 @@
 				96647CA12B7E6A11002BE02A /* Assets.xcassets */,
 				96647CA32B7E6A11002BE02A /* Preview Content */,
 				96647CC72B7E6BD4002BE02A /* BrailleDot.swift */,
+				966FF6D62B80C26100325C9C /* ButtonLeft.swift */,
+				966FF6D82B80C38C00325C9C /* ButtonRight.swift */,
+				966FF6DC2B80E42600325C9C /* BrailleDotView.swift */,
+				966FF6DE2B80E4CF00325C9C /* BrailleCharView.swift */,
 			);
 			path = Braille;
 			sourceTree = "<group>";
@@ -260,8 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966FF6DD2B80E42600325C9C /* BrailleDotView.swift in Sources */,
+				966FF6D92B80C38C00325C9C /* ButtonRight.swift in Sources */,
+				966FF6DF2B80E4CF00325C9C /* BrailleCharView.swift in Sources */,
 				96647CA02B7E6A0D002BE02A /* ContentView.swift in Sources */,
 				96647C9E2B7E6A0D002BE02A /* BrailleApp.swift in Sources */,
+				966FF6D72B80C26100325C9C /* ButtonLeft.swift in Sources */,
 				96647CC82B7E6BD4002BE02A /* BrailleDot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

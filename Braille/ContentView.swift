@@ -13,306 +13,157 @@ struct ContentView: View {
     @State private var letters = ["a", "b", "c", "d","e", "f", "g", "h", "i", "j", "k", "l", "m", "n","o", "p", "q", "r", "s", "t", "u", "v", "w", "x","y", "z"]
     @State private var special = [" ",".",",","?",":",";","-","/","<",">","!","(",")"]
     @State private var numbers = ["0", "1", "2", "3", "4", "5", "6", "7","8", "9"]
+    @State private var offset: CGFloat = 0
 
-
-
+    
+    
     var body: some View {
         ZStack{
             LinearGradient(gradient: Gradient(colors: [Color("Color"), Color("Color 1")]), startPoint: .bottomLeading, endPoint: .topTrailing)
                 .edgesIgnoringSafeArea(.all)
-            VStack {Spacer()
-                
-                HStack {
-                    Button(action: {
-                        counter -= 1
-                        
-                        if counter < 0 {
-                            if state == 0 {
-                                state = 3
-                                counter = special.count - 1
-                                selectedid = special[counter]
-                                text = selectedid
-                            } else if state == 1 {
-                                state = 0
-                                counter = letters.count - 1
-                                selectedid = letters[counter]
-                                text = selectedid
-                            } else if state == 2 {
-                                state = 1
-                                counter = letters.count - 1
-                                selectedid = letters[counter]
-                                text = selectedid
-                            } else if state == 3 {
-                                state = 2
-                                counter = numbers.count - 1
-                                selectedid = numbers[counter]
-                                text = selectedid
-                            }
-                        } else {
-                            if state == 0 || state == 1 {
-                                selectedid = letters[counter]
-                                text = selectedid
-                            } else if state == 2 {
-                                selectedid = numbers[counter]
-                                text = selectedid
-                            } else if state == 3 {
-                                selectedid = special[counter]
-                                text = selectedid
-                            }
-                        }
-                        input = convertToBraille(selectedid)
-                    }) {
-                        Rectangle()
-                            .frame(width: 80, height: 160)
-                            .background(Color("Color 2").opacity(1))
-                            .overlay(Image(systemName: "arrow.backward").font(.system(size: 50)).foregroundColor(.white).bold())
+            VStack(alignment: .center) {// Whole Screen
                             
-                        
-                            .foregroundColor(.clear)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.blue)
-                            )
-                            .cornerRadius(15.0)
-                    }
-                    .padding()
-                    
-                    Spacer()
-                    VStack {
-                        if state == 0{ // small
-                            BrailleDot(input: $input, bsize: 80)
-                        }
-                        else if state == 1{  // capital
-                            HStack(spacing: 30){
-                                BrailleDot(input: $cap, bsize: 80)
-                                BrailleDot(input: $input, bsize: 80)
-                            }
-                        }
-                        else if state == 2{  // numerical
-                            HStack(spacing: 30){
-                                BrailleDot(input: $num, bsize: 80)
-                                
-                                BrailleDot(input: $input, bsize: 80)
-                            }
-                        }
-                        else if state == 3{    // special
-                            HStack(spacing: 30){
-                                
-                                BrailleDot(input: $input, bsize: 80)
-                                
-                            }
-                        }
-                        
-                    }
-                    .frame(width: 400,height: 400)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(Color.blue)
-                    )
-                    
-                    
-                    
-                    VStack {
-                        
-                        Text(text != "" ? (state == 1 ? text.capitalized : text) : "A")
-                            .font(.system(size: 300))
-                            .foregroundColor(.white)
-                        
-                    }
-                    
-                    .frame(width: 400, height: 400)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(Color.blue)
-                    )
-                    
-                    
-                    
-                    Spacer()
-                    Button(action: {
-                        counter += 1
-                        
-                        if counter >= letters.count && state == 0 {
-                            counter = 0
-                            state = 1
-                            selectedid = letters[counter]
-                            text = selectedid
-                        }
-                        else if counter >= letters.count && state == 1 {
-                            counter = 0
-                            state = 2
-                            selectedid = numbers[counter]
-                            text = selectedid
-                        }
-                        else if counter >= numbers.count && state == 2 {
-                            counter = 0
-                            state = 3
-                            selectedid = special[counter]
-                            
-                            text = selectedid
-                        }
-                        else if counter >= special.count && state == 3 {
-                            counter = 0
-                            state = 0
-                            selectedid = letters[counter]
-                            text = selectedid
-                        }
-                        else{
-                            if state == 0 || state == 1{
-                                selectedid = letters[counter]
-                                text = selectedid
-                            }
-                            else if state == 2{
-                                selectedid = numbers[counter]
-                                text = selectedid
-                            }
-                            else if state == 3{
-                                selectedid = special[counter]
-                                text = selectedid
-                            }
-                        }
-                        
-                        
-                        input = convertToBraille(selectedid)
-                    }) {
-                        Rectangle()
-                            .frame(width: 80, height: 160)
-                            .background(Color("Color 2").opacity(1))
-                            .overlay(Image(systemName: "arrow.forward").font(.system(size: 50)).foregroundColor(.white).bold())
-                        
-                            .foregroundColor(.clear)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.blue)
-                            )
-                            .cornerRadius(15.0)
-                            .padding()
-                    }
-                }
-                Spacer()
-                
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]) {
-                       ForEach(statetext.indices, id: \.self) { index in
-                           HStack {
-                               let text = statetext[index]
-                               Button(action: {
-                                   state = index
-                                   if state == 0 {
-                                       self.text = "a"
-                                       self.selectedid = "a"
-                                       counter = 0
-                                   } else if state == 1 {
-                                       self.text = "A"
-                                       self.selectedid = "a"
-                                       counter = 0
-                                   } else if state == 2 {
-                                       self.text = "0"
-                                       self.selectedid = "0"
-                                       counter = 0
-                                   } else if state == 3 {
-                                       self.text = " "
-                                       self.selectedid = " "
-                                       counter = 0
-                                   }
-                               }) {
-                                   Rectangle()
-                                       .frame(width: 150, height: 50)
-                                       .background(state == index ? Color.white.opacity(1) : Color.clear)
-                                       .overlay(Text("\(text)").font(.system(size: 25)).foregroundColor(state == index ? .black : .white).bold())
-                                       .foregroundColor(.clear)
-                                       .overlay(
-                                           RoundedRectangle(cornerRadius: 20)
-                                               .stroke(Color.white)
-                                       )
-                                       .cornerRadius(15.0)
-                               }
-                           }
-
-                       }
-                   }
-                   .padding(.horizontal, 40)
-                   .padding(.bottom, 30)
                
-
+                            
                 
-                
-                
-                
-                
-                HStack(alignment: .center){
-                    if state == 0{
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
-                            ForEach(letters, id: \.self) { letter in
-                                bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
-                                
-                                    .padding(5)
-                            }
-                        }.padding(.horizontal,40)
-                    }
-                    else if state == 1{
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
-                            ForEach(letters, id: \.self) { letter in
-                                bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
-                                    .padding(5)
-                            }
-                        }.padding(.horizontal,40)
-                    }
-                    else if state == 2{
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
-                            ForEach(numbers, id: \.self) { letter in
-                                
-                                bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
-                                    .padding(5)
-                            }
-                        }.padding(.horizontal,40)
-                    }
-                    else if state == 3{
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
-                            ForEach(special, id: \.self) { letter in
-                                
-                                bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
-                                    .padding(5)
-                                
-                                
-                            }
-                        }.padding(.horizontal,40)
+              
+                    
+                    HStack {// 1st horizontal stack
+                        
+                        ButtonLeft(counter: $counter, state: $state, letters: letters, special: special, selectedid: $selectedid, text: $text, numbers: numbers,input: $input)
+                         
+                        
+                        BrailleDotView(state: $state, input: $input, cap: $cap, num: $num)
+                        
+                        BrailleCharView(state: $state, text: $text)
+                        
+                        
+                        ButtonRight(counter: $counter, state: $state, letters: letters, special: special, selectedid: $selectedid, text: $text, numbers: numbers,input: $input)
                         
                     }
-                }.frame(width: UIScreen.main.bounds.width, height: 100)
-                
-                
-                Button(action: {
-                    
-                }){
-                    Rectangle()
-                        .frame(width: 200, height: 50)
-                        .background(Color("Color 2").opacity(1))
-                        .overlay(Text("Next").font(.system(size: 30)).foregroundColor(.white).bold())
-                    
-                        .foregroundColor(.clear)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color("Color 2"))
-                        )
-                        .cornerRadius(15.0)
-                    
-
+                    .padding(.bottom,50)
                     
                     
                     
-                }
-                
-                
-                
-                
-                
-            }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                .padding(30)
-                .aspectRatio(1.0, contentMode: .fit)
+                    HStack{
+                        ForEach(statetext.indices, id: \.self) { index in
+                            HStack {
+                                let text = statetext[index]
+                                Button(action: {
+                                    state = index
+                                    if state == 0 {
+                                        self.text = "a"
+                                        self.selectedid = "a"
+                                        counter = 0
+                                    } else if state == 1 {
+                                        self.text = "A"
+                                        self.selectedid = "a"
+                                        counter = 0
+                                    } else if state == 2 {
+                                        self.text = "0"
+                                        self.selectedid = "0"
+                                        counter = 0
+                                    } else if state == 3 {
+                                        self.text = " "
+                                        self.selectedid = " "
+                                        counter = 0
+                                    }
+                                }) {
+                                    Rectangle()
+                                        .frame(width: 150, height: 50)
+                                        .background(state == index ? Color.white.opacity(1) : Color.clear)
+                                        .overlay(Text("\(text)").font(.system(size: 25)).foregroundColor(state == index ? .black : .white).bold())
+                                        .foregroundColor(.clear)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .stroke(Color.white)
+                                        )
+                                        .cornerRadius(15.0)
+                                }
+                            }
+                            
+                        }
+                    }
+                    .padding(.horizontal, 40)
+                    .padding(.bottom, 50)
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    HStack(alignment: .center){
+                        if state == 0{
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
+                                ForEach(letters, id: \.self) { letter in
+                                    bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
+                                    
+                                        .padding(5)
+                                }
+                            }.padding(.horizontal,40)
+                        }
+                        else if state == 1{
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
+                                ForEach(letters, id: \.self) { letter in
+                                    bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
+                                        .padding(5)
+                                }
+                            }.padding(.horizontal,40)
+                        }
+                        else if state == 2{
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
+                                ForEach(numbers, id: \.self) { letter in
+                                    
+                                    bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
+                                        .padding(5)
+                                }
+                            }.padding(.horizontal,40)
+                        }
+                        else if state == 3{
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
+                                ForEach(special, id: \.self) { letter in
+                                    
+                                    bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
+                                        .padding(5)
+                                    
+                                    
+                                }
+                            }.padding(.horizontal,40)
+                            
+                        }
+                    }.frame(width: UIScreen.main.bounds.width, height: 100)
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                .edgesIgnoringSafeArea(.all)
+                    .padding(30)
+            }
             
-        }
+        }.edgesIgnoringSafeArea(.all)
+            .offset(x: offset)
+            .gesture(
+                DragGesture()
+                    .onChanged { gesture in
+                        
+                    }
+                    .onEnded { gesture in
+                        if gesture.translation.width > 0 {
+                            // code to excute after run
+                            updateSelectionLeft(counter: &counter, state: &state, letters: letters, numbers: numbers, special: special, selectedid: &selectedid, text: &text, input: &input)
+                            
+                                      }
+                        else if gesture.translation.width < 0{
+                            updateSelectionRight(counter: &counter, state: &state, letters: letters, numbers: numbers, special: special, selectedid: &selectedid, text: &text, input: &input)
+                        }
+                        self.offset = 0
+                    }
+            )
         
         
     }

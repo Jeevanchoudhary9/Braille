@@ -9,7 +9,7 @@ struct BrailleDot: View {
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        VStack {
+        VStack() {
             
             ForEach(Array(0..<rows), id: \.self) { row in
                     HStack {
@@ -23,9 +23,8 @@ struct BrailleDot: View {
                                 .frame(width: CGFloat(bsize), height: CGFloat(bsize))
                         }
                     }
-                }
+            }
                     
-            
         }
     }
 }
