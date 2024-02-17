@@ -12,25 +12,27 @@ struct BrailleDotView: View {
     @Binding var input:String
     @Binding var cap:String
     @Binding var num:String
+    @Binding var size:Int
+    
     var body: some View {
         HStack {
             
             if state == 0 { // small
-                BrailleDot(input: $input, bsize: 80)
+                BrailleDot(input: $input, bsize: size)
                 
             } else if state == 1 { // capital
                 HStack(spacing: 30) {
-                    BrailleDot(input: $cap, bsize: 80)
-                    BrailleDot(input: $input, bsize: 80)
+                    BrailleDot(input: $cap, bsize: size)
+                    BrailleDot(input: $input, bsize: size)
                 }
             } else if state == 2 { // numerical
                 HStack(spacing: 30) {
-                    BrailleDot(input: $num, bsize: 80)
-                    BrailleDot(input: $input, bsize: 80)
+                    BrailleDot(input: $num, bsize: size)
+                    BrailleDot(input: $input, bsize: size)
                 }
             } else if state == 3 { // special
                 HStack(spacing: 30) {
-                    BrailleDot(input: $input, bsize: 80)
+                    BrailleDot(input: $input, bsize: size)
                 }
             }
         }

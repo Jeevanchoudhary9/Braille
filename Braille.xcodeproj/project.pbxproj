@@ -19,6 +19,8 @@
 		966FF6D92B80C38C00325C9C /* ButtonRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6D82B80C38C00325C9C /* ButtonRight.swift */; };
 		966FF6DD2B80E42600325C9C /* BrailleDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6DC2B80E42600325C9C /* BrailleDotView.swift */; };
 		966FF6DF2B80E4CF00325C9C /* BrailleCharView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6DE2B80E4CF00325C9C /* BrailleCharView.swift */; };
+		966FF6E42B81392D00325C9C /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 966FF6E22B81392D00325C9C /* beep.wav */; };
+		966FF6EA2B81458D00325C9C /* beep1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 966FF6E92B81458D00325C9C /* beep1.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		966FF6D82B80C38C00325C9C /* ButtonRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRight.swift; sourceTree = "<group>"; };
 		966FF6DC2B80E42600325C9C /* BrailleDotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleDotView.swift; sourceTree = "<group>"; };
 		966FF6DE2B80E4CF00325C9C /* BrailleCharView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleCharView.swift; sourceTree = "<group>"; };
+		966FF6E22B81392D00325C9C /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
+		966FF6E92B81458D00325C9C /* beep1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep1.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 				966FF6D82B80C38C00325C9C /* ButtonRight.swift */,
 				966FF6DC2B80E42600325C9C /* BrailleDotView.swift */,
 				966FF6DE2B80E4CF00325C9C /* BrailleCharView.swift */,
+				966FF6E62B81393E00325C9C /* Sounds */,
 			);
 			path = Braille;
 			sourceTree = "<group>";
@@ -140,6 +145,15 @@
 				96647CBA2B7E6A11002BE02A /* BrailleUITestsLaunchTests.swift */,
 			);
 			path = BrailleUITests;
+			sourceTree = "<group>";
+		};
+		966FF6E62B81393E00325C9C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				966FF6E22B81392D00325C9C /* beep.wav */,
+				966FF6E92B81458D00325C9C /* beep1.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +260,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966FF6E42B81392D00325C9C /* beep.wav in Resources */,
 				96647CA52B7E6A11002BE02A /* Preview Assets.xcassets in Resources */,
+				966FF6EA2B81458D00325C9C /* beep1.wav in Resources */,
 				96647CA22B7E6A11002BE02A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

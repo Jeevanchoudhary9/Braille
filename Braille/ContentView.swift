@@ -1,5 +1,7 @@
 import SwiftUI
 
+
+
 struct ContentView: View {
     @State private var text: String = "a"
     @State private var selectedid: String = "a"
@@ -15,155 +17,194 @@ struct ContentView: View {
     @State private var numbers = ["0", "1", "2", "3", "4", "5", "6", "7","8", "9"]
     @State private var offset: CGFloat = 0
 
-    
+    @State private var isFirstUser: Bool = true
+        @State private var handPosition: CGFloat = 0
+    @State private var timer: Timer?
+    @State var size: Int = 80
+   
+
     
     var body: some View {
+        
+        
         ZStack{
+            
             LinearGradient(gradient: Gradient(colors: [Color("Color"), Color("Color 1")]), startPoint: .bottomLeading, endPoint: .topTrailing)
                 .edgesIgnoringSafeArea(.all)
+            
             VStack(alignment: .center) {// Whole Screen
-                            
-               
-                            
                 
-              
+                HStack {// 1st horizontal stack
                     
-                    HStack {// 1st horizontal stack
-                        
-                        ButtonLeft(counter: $counter, state: $state, letters: letters, special: special, selectedid: $selectedid, text: $text, numbers: numbers,input: $input)
-                         
-                        
-                        BrailleDotView(state: $state, input: $input, cap: $cap, num: $num)
-                        
-                        BrailleCharView(state: $state, text: $text)
-                        
-                        
-                        ButtonRight(counter: $counter, state: $state, letters: letters, special: special, selectedid: $selectedid, text: $text, numbers: numbers,input: $input)
-                        
-                    }
-                    .padding(.bottom,50)
+                    BrailleDotView(state: $state, input: $input, cap: $cap, num: $num,size: $size)
+                        .accessibility(label: Text("View Having Braille"))
                     
+                    BrailleCharView(state: $state, text: $text)
+                        .accessibility(label: Text("View Having Character"))
                     
-                    
-                    HStack{
-                        ForEach(statetext.indices, id: \.self) { index in
-                            HStack {
-                                let text = statetext[index]
-                                Button(action: {
-                                    state = index
-                                    if state == 0 {
-                                        self.text = "a"
-                                        self.selectedid = "a"
-                                        counter = 0
-                                    } else if state == 1 {
-                                        self.text = "A"
-                                        self.selectedid = "a"
-                                        counter = 0
-                                    } else if state == 2 {
-                                        self.text = "0"
-                                        self.selectedid = "0"
-                                        counter = 0
-                                    } else if state == 3 {
-                                        self.text = " "
-                                        self.selectedid = " "
-                                        counter = 0
-                                    }
-                                }) {
-                                    Rectangle()
-                                        .frame(width: 150, height: 50)
-                                        .background(state == index ? Color.white.opacity(1) : Color.clear)
-                                        .overlay(Text("\(text)").font(.system(size: 25)).foregroundColor(state == index ? .black : .white).bold())
-                                        .foregroundColor(.clear)
-                                        .overlay(
-                                            RoundedRectangle(cornerRadius: 20)
-                                                .stroke(Color.white)
-                                        )
-                                        .cornerRadius(15.0)
+                }
+                .padding(.bottom,50)
+                
+                
+                
+                HStack{
+                    ForEach(statetext.indices, id: \.self) { index in
+                        HStack {
+                            let text = statetext[index]
+                            Button(action: {
+                                state = index
+                                if state == 0 {
+                                    self.text = "a"
+                                    self.selectedid = "a"
+                                    counter = 0
+                                } else if state == 1 {
+                                    self.text = "A"
+                                    self.selectedid = "a"
+                                    counter = 0
+                                } else if state == 2 {
+                                    self.text = "0"
+                                    self.selectedid = "0"
+                                    counter = 0
+                                } else if state == 3 {
+                                    self.text = " "
+                                    self.selectedid = " "
+                                    counter = 0
                                 }
+                            }) {
+                                Rectangle()
+                                    .frame(width: 150, height: 50)
+                                    .background(state == index ? Color.white.opacity(1) : Color.clear)
+                                    .overlay(Text("\(text)").font(.system(size: 25)).foregroundColor(state == index ? .black : .white).bold())
+                                    .foregroundColor(.clear)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .stroke(Color.white)
+                                    )
+                                    .cornerRadius(15.0)
                             }
-                            
                         }
+                        
                     }
-                    .padding(.horizontal, 40)
-                    .padding(.bottom, 50)
+                }
+                .padding(.horizontal, 40)
+                .padding(.bottom, 50)
+                .accessibility(label: Text("Selection between Small,Capital,Numerical,Special Characters"))
+                
+                HStack(alignment: .center){
+                    if state == 0{
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
+                            ForEach(letters, id: \.self) { letter in
+                                bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
+                                    .padding(5)
+                                    .accessibility(label: Text("Move through Small Characters"))
+                            }
+                        }.padding(.horizontal,40)
+                    }
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    HStack(alignment: .center){
-                        if state == 0{
-                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
-                                ForEach(letters, id: \.self) { letter in
-                                    bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
-                                    
-                                        .padding(5)
-                                }
-                            }.padding(.horizontal,40)
-                        }
-                        else if state == 1{
-                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
-                                ForEach(letters, id: \.self) { letter in
-                                    bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
-                                        .padding(5)
-                                }
-                            }.padding(.horizontal,40)
-                        }
-                        else if state == 2{
-                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
-                                ForEach(numbers, id: \.self) { letter in
-                                    
-                                    bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
-                                        .padding(5)
-                                }
-                            }.padding(.horizontal,40)
-                        }
-                        else if state == 3{
-                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
-                                ForEach(special, id: \.self) { letter in
-                                    
-                                    bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
-                                        .padding(5)
-                                    
-                                    
-                                }
-                            }.padding(.horizontal,40)
-                            
-                        }
-                    }.frame(width: UIScreen.main.bounds.width, height: 100)
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                .edgesIgnoringSafeArea(.all)
+                    else if state == 1{
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
+                            ForEach(letters, id: \.self) { letter in
+                                bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
+                                    .padding(5)
+                                    .accessibility(label: Text("Move through Capital Characters"))
+                            }
+                        }.padding(.horizontal,40)
+                    }
+                    else if state == 2{
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
+                            ForEach(numbers, id: \.self) { letter in
+                                
+                                bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
+                                    .padding(5)
+                                    .accessibility(label: Text("Move through Numerical Characters"))
+                            }
+                        }.padding(.horizontal,40)
+                    }
+                    else if state == 3{
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
+                            ForEach(special, id: \.self) { letter in
+                                
+                                bottomNav(text: $text, selectedid: $selectedid, input: $input, state: state, id: letter, counter: $counter, letters: letters, numbers: numbers, special: special)
+                                    .padding(5)
+                                    .accessibility(label: Text("Move through Special Characters"))
+                                
+                                
+                            }
+                        }.padding(.horizontal,40)
+                        
+                    }
+                }.frame(width: UIScreen.main.bounds.width, height: 100)
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    .edgesIgnoringSafeArea(.all)
                     .padding(30)
             }
             
-        }.edgesIgnoringSafeArea(.all)
+            
+            
+            VStack {
+                if isFirstUser {
+                    Image(systemName: "hand.point.up.left.fill")
+                    
+                        .font(.system(size: 300))
+                        .foregroundColor(.white)
+                    
+                        .frame(width: 400, height: 400)
+                        .padding()
+                        .offset(x: handPosition)
+                        .animation(Animation.linear(duration: 1.0).repeatForever(autoreverses: true))
+                        .onAppear {
+                            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                                withAnimation {
+                                    updateSelectionRight(counter: &counter, state: &state, letters: letters, numbers: numbers, special: special, selectedid: &selectedid, text: &text, input: &input)
+                                    
+                                    handPosition = 90
+                                    
+                                }
+                            }
+                        }
+                }
+            }
+            .accessibility(label: Text("Swipe Right to Left for Forward or Left to Right for Backward.Tap to Begin"))
+            
+            
+            
+        }
+        .onTapGesture {
+            isFirstUser = false
+            timer?.invalidate()
+        }
+        .edgesIgnoringSafeArea(.all)
             .offset(x: offset)
             .gesture(
                 DragGesture()
                     .onChanged { gesture in
                         
                     }
+                    
                     .onEnded { gesture in
                         if gesture.translation.width > 0 {
                             // code to excute after run
                             updateSelectionLeft(counter: &counter, state: &state, letters: letters, numbers: numbers, special: special, selectedid: &selectedid, text: &text, input: &input)
                             
                                       }
+                        
                         else if gesture.translation.width < 0{
                             updateSelectionRight(counter: &counter, state: &state, letters: letters, numbers: numbers, special: special, selectedid: &selectedid, text: &text, input: &input)
                         }
                         self.offset = 0
                     }
             )
+            .accessibility(label: Text("Swipe Right to Left for Forward"))
+            .accessibility(label: Text("Swipe Left to Right for Backward"))
+        
         
         
     }
@@ -347,4 +388,5 @@ func convertToBraille(_ letter: String) -> String {
 #Preview {
     ContentView()
 }
+
 

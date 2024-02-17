@@ -11,11 +11,12 @@ struct BrailleCharView: View {
     @Binding var state:Int
     @Binding var text:String
     
+    
     var body: some View {
         HStack {
             
             Text(text != "" ? (state == 1 ? text.capitalized : text) : "A")
-                .font(.system(size: 300))
+                .font(.system(size: 320))
                 .foregroundColor(.white)
             
                 .frame(width: 400, height: 400)
