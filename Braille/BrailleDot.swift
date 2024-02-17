@@ -23,7 +23,6 @@ struct BrailleDot: View {
                         let isSelected = circleStates[row][column]
                         
                         
-                        
                         Circle()
                             .fill(isSelected ? (shouldFill ? Color.gray : Color.black) : (shouldFill ? Color.white : Color.clear))
                             .stroke(Color.white, lineWidth: 2)
