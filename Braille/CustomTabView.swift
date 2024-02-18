@@ -15,8 +15,7 @@ struct CustomTabView: View {
         ("rectangle.inset.filled.and.person.filled","Introduction"),
         ("book.pages","Learn"),
         ("hand.point.up.braille","Translate"),
-        ("heart","Favorites"),
-        ("person","Profile")
+        ("gear","Setting")
     ]
     
     var body: some View {
@@ -27,7 +26,7 @@ struct CustomTabView: View {
                 .shadow(radius: 2)
             
             HStack(spacing: 0) {
-                ForEach(0..<5) { index in
+                ForEach(0..<4) { index in ///navbar counter
                     Button {
                         withAnimation {
                             tabSelection = index + 1
@@ -59,9 +58,3 @@ struct CustomTabView: View {
     }
 }
 
-struct CustomTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomTabView(tabSelection: .constant(1))
-            .previewLayout(.sizeThatFits)
-    }
-}

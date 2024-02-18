@@ -211,8 +211,7 @@ struct LearnOrTeach: View {
                         if gesture.translation.width > 0 {
                             // code to excute after run
                             updateSelectionLeft(counter: &counter, state: &state, letters: letters, numbers: numbers, special: special, selectedid: &selectedid, text: &text, input: &input)
-                            
-                                      }
+                                                                  }
                         
                         else if gesture.translation.width < 0{
                             updateSelectionRight(counter: &counter, state: &state, letters: letters, numbers: numbers, special: special, selectedid: &selectedid, text: &text, input: &input)

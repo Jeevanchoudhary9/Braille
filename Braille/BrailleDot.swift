@@ -44,10 +44,12 @@ struct BrailleDot: View {
                     }
                 }
             }
+        }.onChange(of: input) { _ in
+            resetCircleStates()
         }
     }
     
-    private func checkAllCirclesDone() {
+     func checkAllCirclesDone() {
         let allCirclesDone = circleStates.allSatisfy { row in
             row.allSatisfy { $0 }
         }
@@ -58,7 +60,7 @@ struct BrailleDot: View {
         }
     }
 
-    private func resetCircleStates() {
+     func resetCircleStates() {
         circleStates = Array(repeating: Array(repeating: false, count: 2), count: 3)
     }
 }
