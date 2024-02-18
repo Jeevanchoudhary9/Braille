@@ -12,11 +12,11 @@ struct CustomTabView: View {
     @Namespace private var animationNamespace
     
     let tabBarItems: [(image: String, title: String)] = [
-        ("house","Home"),
-        ("magnifyingglass","Search"),
+        ("rectangle.inset.filled.and.person.filled","Introduction"),
+        ("book.pages","Learn"),
+        ("hand.point.up.braille","Translate"),
         ("heart","Favorites"),
-        ("person","Profile"),
-        ("gear","Settings")
+        ("person","Profile")
     ]
     
     var body: some View {

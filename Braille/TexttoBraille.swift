@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct TexttoBraille: View {
-    @State var paragraph = "Hi"
+    @State var paragraph = "Hi WWDC"
     @State var isEditing = false
-    @State var input: [String] = ["134", "23"]
+    @State var input: [String] = ["6","134", "23", " ", "6","2346","6","2346","6","124","6","12"]
     @State var bsize: Int = 10
     let rows = 3
     let columns = 2
@@ -23,78 +23,86 @@ struct TexttoBraille: View {
 
             VStack {
                 HStack {
-                    HStack {
-                        ForEach(input, id: \.self) { letter in
-                            VStack {
-                                ForEach(Array(0..<rows), id: \.self) { row in
-                                    HStack {
-                                        ForEach(Array(0..<columns), id: \.self) { column in
-                                            let dotNumber = row * columns + column + 1
-                                            let shouldFill = letter.contains("\(dotNumber)")
-                                            let index = row * columns + column
-                                            Circle()
-                                                .fill(shouldFill ? Color.white : Color.clear)
-                                                .stroke(shouldFill ? Color.white : Color.clear, lineWidth: 2)
-                                                .frame(width: CGFloat(bsize), height: CGFloat(bsize))
+                    ScrollView(.horizontal,showsIndicators: false){
+                        
+                        HStack {
+                            ForEach(input, id: \.self) { letter in
+                                VStack {
+                                    ForEach(Array(0..<rows), id: \.self) { row in
+                                        HStack {
+                                            ForEach(Array(0..<columns), id: \.self) { column in
+                                                let dotNumber = row * columns + column + 1
+                                                let shouldFill = letter.contains("\(dotNumber)")
+                                                let index = row * columns + column
+                                                Circle()
+                                                    .fill(shouldFill ? Color.white : Color.clear)
+                                                    .stroke(shouldFill ? Color.white : Color.clear, lineWidth: 2)
+                                                    .frame(width: CGFloat(bsize), height: CGFloat(bsize))
+                                            }
                                         }
                                     }
-                                }
-                            }.padding(.horizontal, 5)
+                                }.padding(.horizontal, 5)
+                            }
                         }
+                        .frame(height: 200)
                     }
-                }.frame(width: 800, height: 200)
+                    .accessibility(label: Text("Braille Translation it can be Scrolled"))
+                    .frame(width: 800, height: 200)
+                    .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 30)
+                            .stroke(Color.blue)
+                    )}
+                ZStack{
+                VStack{
+                    if isEditing {
+                        TextField("", text: $paragraph)
+                        
+                            .onChange(of: paragraph, perform: { value in
+                                updateBrailleText(braile: $input, paragraph: $paragraph)
+                            })
+                            .onTapGesture {
+                                isEditing = true
+                            }
+                        
+                    } else {
+                        Text(paragraph)
+                        
+                        
+                    }
+                }.foregroundColor(.white)
+                    .font(.system(size: 50))
+                    .bold()
+                    .frame(width: 800, height: 200)
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerRadius: 30)
                             .stroke(Color.blue)
                     )
-
-                if isEditing {
-                    TextField("", text: $paragraph)
-                        .foregroundColor(.white)
-                        .frame(width: 800, height: 200)
-                        .padding()
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 30)
-                                .stroke(Color.blue)
-                        )
-                        .onChange(of: paragraph, perform: { value in
-                            updateBrailleText(braile: $input, paragraph: $paragraph)
-                            
-                        })
-                        .onTapGesture {
-                            isEditing = true
-                        }
-
-                } else {
-                    Text(paragraph)
-                        .foregroundColor(.white)
-                        .frame(width: 800, height: 200)
-                        .padding()
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 30)
-                                .stroke(Color.blue)
-                        )
-                        .onTapGesture {
-                            isEditing = true
-                        }
+                    .onTapGesture {
+                        isEditing = true
+                        
+                    }
+                    .accessibility(label: Text("Enter Message To Translate"))
+                    
                 }
+
             }
         }
     }
 
     func updateBrailleText(braile: Binding<[String]>, paragraph: Binding<String>) {
-        var braileValues:[String] = []
+        var brailleValues:[String] = []
         for char in paragraph.wrappedValue {
             if char.isUppercase{
-                braileValues.append("6")
+                brailleValues.append("6")
             }else if char.isNumber{
-                braileValues.append("2456")
+                brailleValues.append("2456")
             }
             let brailleChar = convertToBraille(String(char.lowercased()))
-            braileValues.append(brailleChar)
+            brailleValues.append(brailleChar)
         }
-        input = braileValues
+        input = brailleValues
     }
 }
 

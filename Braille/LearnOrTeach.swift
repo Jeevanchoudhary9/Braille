@@ -89,7 +89,7 @@ struct LearnOrTeach: View {
                     }
                 }
                 .padding(.horizontal, 40)
-                .padding(.bottom, 50)
+                .padding(.bottom, 20)
                 .accessibility(label: Text("Selection between Small,Capital,Numerical,Special Characters"))
                 
                 HStack(alignment: .center){
@@ -136,7 +136,6 @@ struct LearnOrTeach: View {
                                 
                             }
                         }.padding(.horizontal,40)
-                            .padding(.bottom,50)
                             
                         
                     }
@@ -152,6 +151,7 @@ struct LearnOrTeach: View {
                 
                     .edgesIgnoringSafeArea(.all)
                     .padding(30)
+                    .padding(.bottom,30)
             }
             
             
@@ -168,13 +168,23 @@ struct LearnOrTeach: View {
                         .offset(x: handPosition)
                         .animation(Animation.linear(duration: 1.0).repeatForever(autoreverses: true))
                         .onAppear {
-                            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-                                withAnimation {
-                                    updateSelectionRight(counter: &counter, state: &state, letters: letters, numbers: numbers, special: special, selectedid: &selectedid, text: &text, input: &input)
-                                    
-                                    handPosition = 30
-                                    
+                            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                                if isFirstUser {
+                                    withAnimation {
+                                        updateSelectionRight(counter: &counter, state: &state, letters: letters, numbers: numbers, special: special, selectedid: &selectedid, text: &text, input: &input)
+                                        
+                                        handPosition = 90
+                                        
+                                    }
                                 }
+                                else{
+                                    isFirstUser = false
+                                }
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 75.0) {
+                                timer?.invalidate()
+                                timer = nil
+                                isFirstUser = false
                             }
                         }
                 }
@@ -188,6 +198,7 @@ struct LearnOrTeach: View {
             isFirstUser = false
             timer?.invalidate()
         }
+        
         .edgesIgnoringSafeArea(.all)
             .offset(x: offset)
             .gesture(
