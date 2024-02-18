@@ -22,6 +22,7 @@ struct AddSlideTip:Tip{
 }
 
 struct AddBralleTip:Tip{
+    
     var title: Text{
         Text("Tap or Hover")
     }

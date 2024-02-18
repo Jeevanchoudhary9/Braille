@@ -32,6 +32,7 @@ struct Introduction: View {
                     .popoverTip(SlideTip)
                     
                     
+                    
                 }
             }else if statecounter == true{
                 HStack{
