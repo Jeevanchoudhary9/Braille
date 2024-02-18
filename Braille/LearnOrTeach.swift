@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct LearnOrTeach: View {
     @State private var text: String = "a"
@@ -26,7 +27,7 @@ struct LearnOrTeach: View {
         @State private var handPosition: CGFloat = 0
     @State private var timer: Timer?
     @State var size: Int = 80
-    
+    let BrailleTip = AddBralleTip()
     var body: some View {
         
         ZStack{
@@ -38,8 +39,16 @@ struct LearnOrTeach: View {
                 
                 HStack {// 1st horizontal stack
                     
-                    BrailleDotView(state: $state, input: $input, cap: $cap, num: $num,size: $size)
-                        .accessibility(label: Text("View Having Braille"))
+                    if isFirstUser {
+                        BrailleDotView(state: $state, input: $input, cap: $cap, num: $num, size: $size)
+                            .accessibility(label: Text("View Having Braille"))
+                            
+                    } else {
+                        BrailleDotView(state: $state, input: $input, cap: $cap, num: $num, size: $size)
+                            .accessibility(label: Text("View Having Braille"))
+                            .popoverTip(BrailleTip)
+                    }
+
                     
                     
                     BrailleCharView(state: $state, text: $text)
@@ -388,4 +397,10 @@ func convertToBraille(_ letter: String) -> String {
 
 #Preview {
     LearnOrTeach()
+        .task {
+            try? Tips.resetDatastore()
+            try? Tips.configure([
+                .displayFrequency(.immediate),
+                .datastoreLocation(.applicationDefault)])
+        }
 }

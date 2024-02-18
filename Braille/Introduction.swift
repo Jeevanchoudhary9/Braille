@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct Introduction: View {
     @State private var offset: CGFloat = 0
     @State var statecounter:Bool = false
     @State var conversecounter:Int = 1
     @State var conversemessage:String = ""
+    let SlideTip = AddSlideTip()
     var body: some View {
         ZStack{
             LinearGradient(gradient: Gradient(colors: [Color("Color"), Color("Color 1")]), startPoint: .bottomLeading, endPoint: .topTrailing)
@@ -27,14 +29,9 @@ struct Introduction: View {
                         
                     }
                     .frame(maxWidth: 700, maxHeight: 300, alignment: .center)
-                    VStack{
-                        Image(systemName: "hand.point.up.left.fill")
-                        Text("Slide right or left")
-                            
-                    }
-                    .font(.system(size: 25).monospacedDigit())
-                    .foregroundStyle(.white.opacity(0.33))
-                    .padding(30)
+                    .popoverTip(SlideTip)
+                    
+                    
                 }
             }else if statecounter == true{
                 HStack{
@@ -89,6 +86,12 @@ struct Introduction: View {
 
 #Preview {
     Introduction()
+        .task {
+            try? Tips.resetDatastore()
+            try? Tips.configure([
+                .displayFrequency(.immediate),
+                .datastoreLocation(.applicationDefault)])
+        }
 }
 
 struct boyconverse: View {

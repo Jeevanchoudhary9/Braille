@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 @main
 struct BrailleApp: App {
@@ -13,6 +14,11 @@ struct BrailleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .task {
+                    try? Tips.configure([
+//                        .displayFrequency(.immediate)
+                        .datastoreLocation(.applicationDefault)])
+                }
         }
     }
 }

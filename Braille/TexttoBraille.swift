@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct TexttoBraille: View {
     @State var paragraph = "Hi WWDC"
@@ -14,6 +15,7 @@ struct TexttoBraille: View {
     @State var bsize: Int = 10
     let rows = 3
     let columns = 2
+    let TranslateTip = AddTranslateTip()
     @State var input1: [String] = []
 
     var body: some View {
@@ -84,17 +86,11 @@ struct TexttoBraille: View {
                             
                         }
                         .accessibility(label: Text("Enter Message To Translate"))
+                        .popoverTip(TranslateTip)
                     
                 }
                 
-                VStack{
-                    Image(systemName: "hand.tap.fill")
-                    Text("Tap for input above")
-                        
-                }
-                .font(.system(size: 25).monospacedDigit())
-                .foregroundStyle(.white.opacity(0.33))
-                .padding(30)
+                
                 
             }
             
