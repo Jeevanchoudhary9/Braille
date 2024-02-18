@@ -15,7 +15,7 @@ struct BrailleDotView: View {
     @Binding var size:Int
     
     var body: some View {
-        HStack {
+        VStack {
             
             if state == 0 { // small
                 BrailleDot(input: $input, bsize: size)
@@ -35,6 +35,7 @@ struct BrailleDotView: View {
                     BrailleDot(input: $input, bsize: size)
                 }
             }
+            
         }
         .frame(width: 400, height: 400)
         .aspectRatio(1/2, contentMode: .fit)

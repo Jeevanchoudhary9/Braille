@@ -18,13 +18,24 @@ struct Introduction: View {
                 .edgesIgnoringSafeArea(.all)
             
             if statecounter == false{
-                VStack(alignment: .leading, spacing: 32) {
-                IntroductionTemp(imageName: "books.vertical.fill", title: "Learn and Teach", description: "Introducing an app for the visually impaired, providing essential tools and a platform for learning and teaching Braille")
-                
-                IntroductionTemp(imageName: "bubble.left.and.text.bubble.right.fill", title: "Translation", description: "Explore a feature that presents the English alphabet alongside their Braille equivalents, enhancing accessibility.")
-                IntroductionTemp(imageName: "hand.point.up.braille", title: "Interaction", description: "Experience a function that uses sound to interpret and translate Braille characters, offering a new way to interact with the world.")
-            }
-                .frame(maxWidth: 700, maxHeight: .infinity, alignment: .center)
+                VStack{
+                    VStack(alignment: .leading, spacing: 32) {
+                        IntroductionTemp(imageName: "books.vertical.fill", title: "Learn and Teach", description: "Introducing an app for the visually impaired, providing essential tools and a platform for learning and teaching Braille")
+                        
+                        IntroductionTemp(imageName: "bubble.left.and.text.bubble.right.fill", title: "Translation", description: "Explore a feature that presents the English alphabet alongside their Braille equivalents, enhancing accessibility.")
+                        IntroductionTemp(imageName: "hand.point.up.braille", title: "Interaction", description: "Experience a function that uses sound to interpret and translate Braille characters, offering a new way to interact with the world.")
+                        
+                    }
+                    .frame(maxWidth: 700, maxHeight: 300, alignment: .center)
+                    VStack{
+                        Image(systemName: "hand.point.up.left.fill")
+                        Text("Slide right or left")
+                            
+                    }
+                    .font(.system(size: 25).monospacedDigit())
+                    .foregroundStyle(.white.opacity(0.33))
+                    .padding(30)
+                }
             }else if statecounter == true{
                 HStack{
                     

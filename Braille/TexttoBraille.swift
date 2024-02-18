@@ -54,40 +54,50 @@ struct TexttoBraille: View {
                             .stroke(Color.blue)
                     )}
                 ZStack{
-                VStack{
-                    if isEditing {
-                        TextField("", text: $paragraph)
-                        
-                            .onChange(of: paragraph, perform: { value in
-                                updateBrailleText(braile: $input, paragraph: $paragraph)
-                            })
-                            .onTapGesture {
-                                isEditing = true
-                            }
-                        
-                    } else {
-                        Text(paragraph)
-                        
-                        
-                    }
-                }.foregroundColor(.white)
-                    .font(.system(size: 50))
-                    .bold()
-                    .frame(width: 800, height: 200)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(Color.blue)
-                    )
-                    .onTapGesture {
-                        isEditing = true
-                        
-                    }
-                    .accessibility(label: Text("Enter Message To Translate"))
+                    VStack{
+                        if isEditing {
+                            TextField("", text: $paragraph)
+                            
+                                .onChange(of: paragraph, perform: { value in
+                                    updateBrailleText(braile: $input, paragraph: $paragraph)
+                                })
+                                .onTapGesture {
+                                    isEditing = true
+                                }
+                            
+                        } else {
+                            Text(paragraph)
+                            
+                            
+                        }
+                    }.foregroundColor(.white)
+                        .font(.system(size: 50))
+                        .bold()
+                        .frame(width: 800, height: 200)
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 30)
+                                .stroke(Color.blue)
+                        )
+                        .onTapGesture {
+                            isEditing = true
+                            
+                        }
+                        .accessibility(label: Text("Enter Message To Translate"))
                     
                 }
-
+                
+                VStack{
+                    Image(systemName: "hand.tap.fill")
+                    Text("Tap for input above")
+                        
+                }
+                .font(.system(size: 25).monospacedDigit())
+                .foregroundStyle(.white.opacity(0.33))
+                .padding(30)
+                
             }
+            
         }
     }
 

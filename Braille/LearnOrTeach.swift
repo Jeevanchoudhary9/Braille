@@ -41,11 +41,12 @@ struct LearnOrTeach: View {
                     BrailleDotView(state: $state, input: $input, cap: $cap, num: $num,size: $size)
                         .accessibility(label: Text("View Having Braille"))
                     
+                    
                     BrailleCharView(state: $state, text: $text)
                         .accessibility(label: Text("View Having Character"))
                     
                 }
-                .padding(.bottom,50)
+                .padding(50)
                 
                 
                 
