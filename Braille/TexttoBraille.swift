@@ -34,7 +34,7 @@ struct TexttoBraille: View {
                                             let index = row * columns + column
                                             Circle()
                                                 .fill(shouldFill ? Color.white : Color.clear)
-                                                .stroke(Color.white, lineWidth: 2)
+                                                .stroke(shouldFill ? Color.white : Color.clear, lineWidth: 2)
                                                 .frame(width: CGFloat(bsize), height: CGFloat(bsize))
                                         }
                                     }
@@ -60,6 +60,7 @@ struct TexttoBraille: View {
                         )
                         .onChange(of: paragraph, perform: { value in
                             updateBrailleText(braile: $input, paragraph: $paragraph)
+                            
                         })
                         .onTapGesture {
                             isEditing = true
@@ -83,16 +84,18 @@ struct TexttoBraille: View {
     }
 
     func updateBrailleText(braile: Binding<[String]>, paragraph: Binding<String>) {
-        var braileValue = braile.wrappedValue
-        for letter in paragraph.wrappedValue {
-            print(letter)
-            braileValue.append(convertToBraille(String(letter)))
+        var braileValues:[String] = []
+        for char in paragraph.wrappedValue {
+            if char.isUppercase{
+                braileValues.append("6")
+            }else if char.isNumber{
+                braileValues.append("2456")
+            }
+            let brailleChar = convertToBraille(String(char.lowercased()))
+            braileValues.append(brailleChar)
         }
-        braile.wrappedValue = braileValue
-        print(paragraph.wrappedValue)
-        print(braileValue)
+        input = braileValues
     }
-
 }
 
 
