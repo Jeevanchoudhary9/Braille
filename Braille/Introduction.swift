@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Introduction: View {
     @State private var offset: CGFloat = 0
-    @State var statecounter:Int = 0
+    @State var statecounter:Bool = false
     @State var conversecounter:Int = 1
     @State var conversemessage:String = ""
     var body: some View {
@@ -17,7 +17,7 @@ struct Introduction: View {
             LinearGradient(gradient: Gradient(colors: [Color("Color"), Color("Color 1")]), startPoint: .bottomLeading, endPoint: .topTrailing)
                 .edgesIgnoringSafeArea(.all)
             
-            if statecounter == 0{
+            if statecounter == false{
                 VStack(alignment: .leading, spacing: 32) {
                 IntroductionTemp(imageName: "books.vertical.fill", title: "Learn and Teach", description: "Introducing an app for the visually impaired, providing essential tools and a platform for learning and teaching Braille")
                 
@@ -25,7 +25,7 @@ struct Introduction: View {
                 IntroductionTemp(imageName: "hand.point.up.braille", title: "Interaction", description: "Experience a function that uses sound to interpret and translate Braille characters, offering a new way to interact with the world.")
             }
                 .frame(maxWidth: 700, maxHeight: .infinity, alignment: .center)
-            }else if statecounter == 1{
+            }else if statecounter == true{
                 HStack{
                     
                     
@@ -60,12 +60,12 @@ struct Introduction: View {
                     .onEnded { gesture in
                         if gesture.translation.width > 0 {
                             // code to excute after run
-                            statecounter = statecounter - 1
+                             statecounter.toggle()
                             
                                       }
                         
                         else if gesture.translation.width < 0{
-                            statecounter = statecounter + 1
+                            statecounter.toggle()
                         }
                         self.offset = 0
                     }

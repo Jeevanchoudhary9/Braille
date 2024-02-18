@@ -27,6 +27,7 @@
 		966FF6F22B8211DC00325C9C /* IntroductionTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6F12B8211DC00325C9C /* IntroductionTemp.swift */; };
 		966FF6F42B82132600325C9C /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6F32B82132600325C9C /* Introduction.swift */; };
 		966FF6F62B821D0500325C9C /* Designer-2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 966FF6F52B821D0500325C9C /* Designer-2.jpeg */; };
+		966FF6F82B824AC900325C9C /* info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6F72B824AC900325C9C /* info.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		966FF6F12B8211DC00325C9C /* IntroductionTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionTemp.swift; sourceTree = "<group>"; };
 		966FF6F32B82132600325C9C /* Introduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
 		966FF6F52B821D0500325C9C /* Designer-2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Designer-2.jpeg"; sourceTree = "<group>"; };
+		966FF6F72B824AC900325C9C /* info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = info.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				966FF6EF2B8175E600325C9C /* TexttoBraille.swift */,
 				966FF6F12B8211DC00325C9C /* IntroductionTemp.swift */,
 				966FF6F32B82132600325C9C /* Introduction.swift */,
+				966FF6F72B824AC900325C9C /* info.swift */,
 			);
 			path = Braille;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				966FF6D92B80C38C00325C9C /* ButtonRight.swift in Sources */,
 				966FF6DF2B80E4CF00325C9C /* BrailleCharView.swift in Sources */,
 				96647CA02B7E6A0D002BE02A /* ContentView.swift in Sources */,
+				966FF6F82B824AC900325C9C /* info.swift in Sources */,
 				96647C9E2B7E6A0D002BE02A /* BrailleApp.swift in Sources */,
 				966FF6F02B8175E600325C9C /* TexttoBraille.swift in Sources */,
 				966FF6F22B8211DC00325C9C /* IntroductionTemp.swift in Sources */,

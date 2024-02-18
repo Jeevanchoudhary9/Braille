@@ -15,7 +15,7 @@ struct CustomTabView: View {
         ("rectangle.inset.filled.and.person.filled","Introduction"),
         ("book.pages","Learn"),
         ("hand.point.up.braille","Translate"),
-        ("gear","Setting")
+        ("info","info")
     ]
     
     var body: some View {
