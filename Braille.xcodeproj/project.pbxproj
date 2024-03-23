@@ -122,18 +122,12 @@
 		96647C9C2B7E6A0D002BE02A /* Braille */ = {
 			isa = PBXGroup;
 			children = (
+				96647C9F2B7E6A0D002BE02A /* ContentView.swift */,
+				96647C9D2B7E6A0D002BE02A /* BrailleApp.swift */,
 				96861E3D2BAEB52C0080E3E6 /* Views */,
 				96861E3C2BAEB5230080E3E6 /* Components */,
-				96647C9D2B7E6A0D002BE02A /* BrailleApp.swift */,
-				96647C9F2B7E6A0D002BE02A /* ContentView.swift */,
 				96647CA12B7E6A11002BE02A /* Assets.xcassets */,
-				966FF6DC2B80E42600325C9C /* BrailleDotView.swift */,
-				966FF6DE2B80E4CF00325C9C /* BrailleCharView.swift */,
 				966FF6E62B81393E00325C9C /* Sounds */,
-				966FF6ED2B81691500325C9C /* CustomTabView.swift */,
-				966FF6EF2B8175E600325C9C /* TexttoBraille.swift */,
-				966FF6F12B8211DC00325C9C /* IntroductionTemp.swift */,
-				966FF6F32B82132600325C9C /* Introduction.swift */,
 				96647CA32B7E6A11002BE02A /* Preview Content */,
 			);
 			path = Braille;
@@ -176,7 +170,11 @@
 		96861E3C2BAEB5230080E3E6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				966FF6DE2B80E4CF00325C9C /* BrailleCharView.swift */,
+				966FF6DC2B80E42600325C9C /* BrailleDotView.swift */,
+				966FF6F12B8211DC00325C9C /* IntroductionTemp.swift */,
 				96861E3E2BAEB5680080E3E6 /* Buttons */,
+				966FF6ED2B81691500325C9C /* CustomTabView.swift */,
 				96B6E40B2B8279CD006F1A58 /* Tip.swift */,
 				96647CC72B7E6BD4002BE02A /* BrailleDot.swift */,
 			);
@@ -188,6 +186,8 @@
 			children = (
 				966FF6F72B824AC900325C9C /* info.swift */,
 				966FF6EB2B815EF900325C9C /* Home.swift */,
+				966FF6F32B82132600325C9C /* Introduction.swift */,
+				966FF6EF2B8175E600325C9C /* TexttoBraille.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
