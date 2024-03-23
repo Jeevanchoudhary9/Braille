@@ -21,7 +21,7 @@
 		966FF6DF2B80E4CF00325C9C /* BrailleCharView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6DE2B80E4CF00325C9C /* BrailleCharView.swift */; };
 		966FF6E42B81392D00325C9C /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 966FF6E22B81392D00325C9C /* beep.wav */; };
 		966FF6EA2B81458D00325C9C /* beep1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 966FF6E92B81458D00325C9C /* beep1.wav */; };
-		966FF6EC2B815EF900325C9C /* LearnOrTeach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6EB2B815EF900325C9C /* LearnOrTeach.swift */; };
+		966FF6EC2B815EF900325C9C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6EB2B815EF900325C9C /* Home.swift */; };
 		966FF6EE2B81691500325C9C /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6ED2B81691500325C9C /* CustomTabView.swift */; };
 		966FF6F02B8175E600325C9C /* TexttoBraille.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6EF2B8175E600325C9C /* TexttoBraille.swift */; };
 		966FF6F22B8211DC00325C9C /* IntroductionTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6F12B8211DC00325C9C /* IntroductionTemp.swift */; };
@@ -60,12 +60,12 @@
 		96647CBA2B7E6A11002BE02A /* BrailleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		96647CC72B7E6BD4002BE02A /* BrailleDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleDot.swift; sourceTree = "<group>"; };
 		966FF6D62B80C26100325C9C /* ButtonLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLeft.swift; sourceTree = "<group>"; };
-		966FF6D82B80C38C00325C9C /* ButtonRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRight.swift; sourceTree = "<group>"; };
+		966FF6D82B80C38C00325C9C /* ButtonRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonRight.swift; path = ../../ButtonRight.swift; sourceTree = "<group>"; };
 		966FF6DC2B80E42600325C9C /* BrailleDotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleDotView.swift; sourceTree = "<group>"; };
 		966FF6DE2B80E4CF00325C9C /* BrailleCharView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleCharView.swift; sourceTree = "<group>"; };
 		966FF6E22B81392D00325C9C /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		966FF6E92B81458D00325C9C /* beep1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep1.wav; sourceTree = "<group>"; };
-		966FF6EB2B815EF900325C9C /* LearnOrTeach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnOrTeach.swift; sourceTree = "<group>"; };
+		966FF6EB2B815EF900325C9C /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		966FF6ED2B81691500325C9C /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		966FF6EF2B8175E600325C9C /* TexttoBraille.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexttoBraille.swift; sourceTree = "<group>"; };
 		966FF6F12B8211DC00325C9C /* IntroductionTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionTemp.swift; sourceTree = "<group>"; };
@@ -122,23 +122,19 @@
 		96647C9C2B7E6A0D002BE02A /* Braille */ = {
 			isa = PBXGroup;
 			children = (
+				96861E3D2BAEB52C0080E3E6 /* Views */,
+				96861E3C2BAEB5230080E3E6 /* Components */,
 				96647C9D2B7E6A0D002BE02A /* BrailleApp.swift */,
 				96647C9F2B7E6A0D002BE02A /* ContentView.swift */,
 				96647CA12B7E6A11002BE02A /* Assets.xcassets */,
-				96647CA32B7E6A11002BE02A /* Preview Content */,
-				96647CC72B7E6BD4002BE02A /* BrailleDot.swift */,
-				966FF6D62B80C26100325C9C /* ButtonLeft.swift */,
-				966FF6D82B80C38C00325C9C /* ButtonRight.swift */,
 				966FF6DC2B80E42600325C9C /* BrailleDotView.swift */,
 				966FF6DE2B80E4CF00325C9C /* BrailleCharView.swift */,
 				966FF6E62B81393E00325C9C /* Sounds */,
-				966FF6EB2B815EF900325C9C /* LearnOrTeach.swift */,
 				966FF6ED2B81691500325C9C /* CustomTabView.swift */,
 				966FF6EF2B8175E600325C9C /* TexttoBraille.swift */,
 				966FF6F12B8211DC00325C9C /* IntroductionTemp.swift */,
 				966FF6F32B82132600325C9C /* Introduction.swift */,
-				966FF6F72B824AC900325C9C /* info.swift */,
-				96B6E40B2B8279CD006F1A58 /* Tip.swift */,
+				96647CA32B7E6A11002BE02A /* Preview Content */,
 			);
 			path = Braille;
 			sourceTree = "<group>";
@@ -175,6 +171,34 @@
 				966FF6E92B81458D00325C9C /* beep1.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		96861E3C2BAEB5230080E3E6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				96861E3E2BAEB5680080E3E6 /* Buttons */,
+				96B6E40B2B8279CD006F1A58 /* Tip.swift */,
+				96647CC72B7E6BD4002BE02A /* BrailleDot.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		96861E3D2BAEB52C0080E3E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				966FF6F72B824AC900325C9C /* info.swift */,
+				966FF6EB2B815EF900325C9C /* Home.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96861E3E2BAEB5680080E3E6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				966FF6D62B80C26100325C9C /* ButtonLeft.swift */,
+				966FF6D82B80C38C00325C9C /* ButtonRight.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,7 +343,7 @@
 				966FF6F02B8175E600325C9C /* TexttoBraille.swift in Sources */,
 				966FF6F22B8211DC00325C9C /* IntroductionTemp.swift in Sources */,
 				966FF6F42B82132600325C9C /* Introduction.swift in Sources */,
-				966FF6EC2B815EF900325C9C /* LearnOrTeach.swift in Sources */,
+				966FF6EC2B815EF900325C9C /* Home.swift in Sources */,
 				966FF6EE2B81691500325C9C /* CustomTabView.swift in Sources */,
 				966FF6D72B80C26100325C9C /* ButtonLeft.swift in Sources */,
 				96647CC82B7E6BD4002BE02A /* BrailleDot.swift in Sources */,
