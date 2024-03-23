@@ -29,7 +29,7 @@
 		966FF6F82B824AC900325C9C /* info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FF6F72B824AC900325C9C /* info.swift */; };
 		96861E432BAEC7720080E3E6 /* IMG_0025 Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 96861E402BAEC7720080E3E6 /* IMG_0025 Large.png */; };
 		96861E442BAEC7720080E3E6 /* IMG_0026 Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 96861E412BAEC7720080E3E6 /* IMG_0026 Large.png */; };
-		96861E452BAEC7720080E3E6 /* IMG_0027 Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 96861E422BAEC7720080E3E6 /* IMG_0027 Large.png */; };
+		96861E452BAEC7720080E3E6 /* IMG_0027 Larg.png in Resources */ = {isa = PBXBuildFile; fileRef = 96861E422BAEC7720080E3E6 /* IMG_0027 Larg.png */; };
 		96B6E40C2B8279CD006F1A58 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6E40B2B8279CD006F1A58 /* Tip.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +76,7 @@
 		966FF6F72B824AC900325C9C /* info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = info.swift; sourceTree = "<group>"; };
 		96861E402BAEC7720080E3E6 /* IMG_0025 Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG_0025 Large.png"; sourceTree = "<group>"; };
 		96861E412BAEC7720080E3E6 /* IMG_0026 Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG_0026 Large.png"; sourceTree = "<group>"; };
-		96861E422BAEC7720080E3E6 /* IMG_0027 Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG_0027 Large.png"; sourceTree = "<group>"; };
+		96861E422BAEC7720080E3E6 /* IMG_0027 Larg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG_0027 Larg.png"; sourceTree = "<group>"; };
 		96B6E40B2B8279CD006F1A58 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,7 +213,7 @@
 			children = (
 				96861E402BAEC7720080E3E6 /* IMG_0025 Large.png */,
 				96861E412BAEC7720080E3E6 /* IMG_0026 Large.png */,
-				96861E422BAEC7720080E3E6 /* IMG_0027 Large.png */,
+				96861E422BAEC7720080E3E6 /* IMG_0027 Larg.png */,
 			);
 			path = screenshots;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 				96861E442BAEC7720080E3E6 /* IMG_0026 Large.png in Resources */,
 				966FF6E42B81392D00325C9C /* beep.wav in Resources */,
 				96861E432BAEC7720080E3E6 /* IMG_0025 Large.png in Resources */,
-				96861E452BAEC7720080E3E6 /* IMG_0027 Large.png in Resources */,
+				96861E452BAEC7720080E3E6 /* IMG_0027 Larg.png in Resources */,
 				96647CA52B7E6A11002BE02A /* Preview Assets.xcassets in Resources */,
 				966FF6EA2B81458D00325C9C /* beep1.wav in Resources */,
 				96647CA22B7E6A11002BE02A /* Assets.xcassets in Resources */,
